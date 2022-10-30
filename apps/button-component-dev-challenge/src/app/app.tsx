@@ -1,14 +1,7 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import { Button } from '@button-component-dev-challenge/ui';
 
 export function App() {
-  return (
-    <>
-      <NxWelcome title="button-component-dev-challenge" />
-      <div />
-    </>
-  );
+  return <Button />;
 }
 
 export default App;
