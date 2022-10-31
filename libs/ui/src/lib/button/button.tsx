@@ -104,6 +104,11 @@ const buttonStyles = cva(BASE_BUTTON_STYLES, {
       class: ['border-red', 'text-red'],
     },
     { color: 'danger', variant: 'text', class: ['text-red'] },
+    {
+      disabled: true,
+      variant: 'text',
+      class: ['hover:bg-white', 'focus:bg-white'],
+    },
   ],
   defaultVariants: {
     color: 'default',
