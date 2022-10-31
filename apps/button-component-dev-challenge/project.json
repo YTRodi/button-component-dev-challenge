@@ -22,7 +22,8 @@
         ],
         "styles": ["apps/button-component-dev-challenge/src/styles.scss"],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "@nrwl/react/plugins/webpack",
+        "postcssConfig": "apps/button-component-dev-challenge/postcss.config.js"
       },
       "configurations": {
         "development": {
