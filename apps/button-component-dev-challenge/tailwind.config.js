@@ -40,7 +40,12 @@ module.exports = {
       'ubuntu-mono': ['"Ubuntu Mono"', ...defaultTheme.fontFamily.sans],
       'noto-sans-jp': ['"Noto Sans JP"', ...defaultTheme.fontFamily.sans],
     },
+    boxShadow: {
+      slate: '0px 2px 3px rgba(51, 51, 51, 0.2)',
+      blue: '0px 2px 3px rgba(41, 98, 255, 0.2)',
+      gray: '0px 2px 3px rgba(69, 90, 100, 0.2)',
+      red: '0px 2px 3px rgba(211, 47, 47, 0.2)',
+    },
   },
-
   plugins: [],
 };

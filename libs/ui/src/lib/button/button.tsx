@@ -1,5 +1,4 @@
 import React from 'react';
-import { type IconType } from 'react-icons';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const buttonStyles = cva(
@@ -12,6 +11,8 @@ const buttonStyles = cva(
     'hover:bg-slate-dark',
     'focus:bg-slate-dark',
     'focus:outline-none',
+    'focus:outline-slate-darkest',
+    'shadow-slate',
     // For start/end icon prop
     'flex justify-center items-center gap-[10px]',
   ],
@@ -23,13 +24,14 @@ const buttonStyles = cva(
       //   text: ['bg-transparent'],
       // },
       color: {
-        default: ['focus:outline-slate-darkest'],
+        default: [],
         primary: [
           'bg-blue',
           'text-white',
           'hover:bg-blue-dark',
           'focus:bg-blue-dark',
           'focus:outline-blue-dark',
+          'shadow-blue',
         ],
         secondary: [
           'bg-gray',
@@ -37,6 +39,7 @@ const buttonStyles = cva(
           'hover:bg-gray-dark',
           'focus:bg-gray-dark',
           'focus:outline-gray-dark',
+          'shadow-gray',
         ],
         danger: [
           'bg-red',
@@ -44,6 +47,7 @@ const buttonStyles = cva(
           'hover:bg-red-dark',
           'focus:bg-red-dark',
           'focus:outline-red-dark',
+          'shadow-red',
         ],
       },
       size: {

@@ -1,6 +1,9 @@
 import { MdLocalGroceryStore } from 'react-icons/md';
 import { Button } from '@button-component-dev-challenge/ui';
 
+// TODO: move to constants  lib?
+const DEFAULT_BUTTON_TEXT = 'Default';
+
 // TODO: move to UI lib (create a componente with NX CLI)
 function ButtonLayout({
   children,
@@ -31,8 +34,8 @@ function ButtonLayout({
 export function App() {
   return (
     <div className="flex flex-col gap-11">
-      {/* // TODO: maybe we can use a grid here (according to the design), for this two sections */}
       <IconSectionProps />
+      {/* // TODO: maybe we can use a grid here (according to the design), for this two sections */}
       <SizeSectionProps />
       <ColorSectionProps />
     </div>
@@ -44,10 +47,12 @@ function IconSectionProps() {
   return (
     <div className="flex flex-wrap gap-11">
       <ButtonLayout title="<Button startIcon=”local_grocery_store” />">
-        <Button startIcon={<MdLocalGroceryStore />}>Default</Button>
+        <Button startIcon={<MdLocalGroceryStore />}>
+          {DEFAULT_BUTTON_TEXT}
+        </Button>
       </ButtonLayout>
       <ButtonLayout title="<Button endIcon=”local_grocery_store” />">
-        <Button endIcon={<MdLocalGroceryStore />}>Default</Button>
+        <Button endIcon={<MdLocalGroceryStore />}>{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
     </div>
   );
@@ -57,13 +62,13 @@ function SizeSectionProps() {
   return (
     <div className="flex flex-wrap gap-11">
       <ButtonLayout title="<Button size=”sm” />">
-        <Button size="sm">Default</Button>
+        <Button size="sm">{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
       <ButtonLayout title="<Button size=”md” />">
-        <Button>Default</Button>
+        <Button>{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
       <ButtonLayout title="<Button size=”lg” />">
-        <Button size="lg">Default</Button>
+        <Button size="lg">{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
     </div>
   );
@@ -73,7 +78,7 @@ function ColorSectionProps() {
   return (
     <div className="flex flex-wrap gap-11">
       <ButtonLayout title="<Button color=”default” />">
-        <Button>Default</Button>
+        <Button>{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
       <ButtonLayout title="<Button color=”primary” />">
         <Button color="primary">Primary</Button>
