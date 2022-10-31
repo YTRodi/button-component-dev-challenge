@@ -1,3 +1,4 @@
+import { MdLocalGroceryStore } from 'react-icons/md';
 import { Button } from '@button-component-dev-challenge/ui';
 
 // TODO: move to UI lib (create a componente with NX CLI)
@@ -31,8 +32,23 @@ export function App() {
   return (
     <div className="flex flex-col gap-11">
       {/* // TODO: maybe we can use a grid here (according to the design), for this two sections */}
+      <IconSectionProps />
       <SizeSectionProps />
       <ColorSectionProps />
+    </div>
+  );
+}
+
+// TODO: move sections to another folders
+function IconSectionProps() {
+  return (
+    <div className="flex flex-wrap gap-11">
+      <ButtonLayout title="<Button startIcon=”local_grocery_store” />">
+        <Button startIcon={<MdLocalGroceryStore />}>Default</Button>
+      </ButtonLayout>
+      <ButtonLayout title="<Button endIcon=”local_grocery_store” />">
+        <Button endIcon={<MdLocalGroceryStore />}>Default</Button>
+      </ButtonLayout>
     </div>
   );
 }
