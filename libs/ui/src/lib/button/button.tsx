@@ -58,11 +58,15 @@ const buttonStyles = cva(
       full: {
         true: 'w-full',
       },
+      disableShadow: {
+        true: 'shadow-none',
+      },
     },
     defaultVariants: {
       color: 'default',
       size: 'md',
       full: false,
+      disableShadow: false,
     },
   }
 );
@@ -80,12 +84,17 @@ export function Button({
   color,
   size,
   full,
+  disableShadow,
   startIcon,
   endIcon,
   ...props
 }: ButtonProps) {
+  console.log('disableShadow :>> ', disableShadow);
   return (
-    <button className={buttonStyles({ color, size, full })} {...props}>
+    <button
+      className={buttonStyles({ color, size, full, disableShadow })}
+      {...props}
+    >
       {startIcon && startIcon}
       {children}
       {endIcon && endIcon}

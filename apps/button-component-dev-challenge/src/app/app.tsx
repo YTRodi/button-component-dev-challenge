@@ -1,10 +1,18 @@
 import { MdLocalGroceryStore } from 'react-icons/md';
 import { Button } from '@button-component-dev-challenge/ui';
 
-// TODO: move to constants  lib?
+// TODO: move to constants lib? I think isn't neccessary
 const DEFAULT_BUTTON_TEXT = 'Default';
 
 // TODO: move to UI lib (create a componente with NX CLI)
+function AppLayout({ children }: { children: React.ReactNode }) {
+  return <div className="flex flex-col gap-11">{children}</div>;
+}
+
+function ButtonGroupLayout({ children }: { children: React.ReactNode }) {
+  return <div className="flex flex-wrap gap-11">{children}</div>;
+}
+
 function ButtonLayout({
   children,
   title,
@@ -33,19 +41,28 @@ function ButtonLayout({
 // TODO: los componentes en la app solo deben tener inputs
 export function App() {
   return (
-    <div className="flex flex-col gap-11">
+    <AppLayout>
+      <DisableShadowSectionProps />
       <IconSectionProps />
       {/* // TODO: maybe we can use a grid here (according to the design), for this two sections */}
       <SizeSectionProps />
       <ColorSectionProps />
-    </div>
+    </AppLayout>
   );
 }
 
 // TODO: move sections to another folders
+function DisableShadowSectionProps() {
+  return (
+    <ButtonLayout title="<Button disableShadow />">
+      <Button disableShadow>{DEFAULT_BUTTON_TEXT}</Button>
+    </ButtonLayout>
+  );
+}
+
 function IconSectionProps() {
   return (
-    <div className="flex flex-wrap gap-11">
+    <ButtonGroupLayout>
       <ButtonLayout title="<Button startIcon=”local_grocery_store” />">
         <Button startIcon={<MdLocalGroceryStore />}>
           {DEFAULT_BUTTON_TEXT}
@@ -54,13 +71,13 @@ function IconSectionProps() {
       <ButtonLayout title="<Button endIcon=”local_grocery_store” />">
         <Button endIcon={<MdLocalGroceryStore />}>{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
-    </div>
+    </ButtonGroupLayout>
   );
 }
 
 function SizeSectionProps() {
   return (
-    <div className="flex flex-wrap gap-11">
+    <ButtonGroupLayout>
       <ButtonLayout title="<Button size=”sm” />">
         <Button size="sm">{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
@@ -70,13 +87,13 @@ function SizeSectionProps() {
       <ButtonLayout title="<Button size=”lg” />">
         <Button size="lg">{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
-    </div>
+    </ButtonGroupLayout>
   );
 }
 
 function ColorSectionProps() {
   return (
-    <div className="flex flex-wrap gap-11">
+    <ButtonGroupLayout>
       <ButtonLayout title="<Button color=”default” />">
         <Button>{DEFAULT_BUTTON_TEXT}</Button>
       </ButtonLayout>
@@ -89,7 +106,7 @@ function ColorSectionProps() {
       <ButtonLayout title="<Button color=”danger” />">
         <Button color="danger">Danger</Button>
       </ButtonLayout>
-    </div>
+    </ButtonGroupLayout>
   );
 }
 
