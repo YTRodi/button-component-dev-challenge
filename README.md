@@ -7,7 +7,6 @@ Reusable **button** with all the states in the [design](https://www.figma.com/fi
  - [Nx](https://nx.dev/) (monorepo: APP and UI library)
  - [Tailwind css](https://tailwindcss.com/)
  - [Typescript](https://www.typescriptlang.org/)
- - [Storybook](https://storybook.js.org/) (Working on it!)
  
 # Preview deploy
 Working on it!
